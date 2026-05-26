@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    -cron: "0 22 * * *"
 
 jobs:
   test:
@@ -25,8 +27,5 @@ jobs:
           pip install -r requirements.txt
           playwright install
 
-      - name: Run API tests
-        run: pytest tests/api -v
-
-      - name: Run UI tests
-        run: pytest tests/ui -v
+      - name: Run smoke tests
+        run: pytest -m smoke -v

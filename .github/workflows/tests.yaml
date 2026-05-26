@@ -28,4 +28,9 @@ jobs:
           playwright install
 
       - name: Run smoke tests
+        if: github.event_name == 'push'
         run: pytest -m smoke -v
+
+      - name: Run regression tests
+        if: github.event_name == 'schedule'
+        run: pytest -m regression -v

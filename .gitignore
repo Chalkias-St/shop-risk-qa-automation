@@ -6,3 +6,4 @@ screenshots/
 traces/
 playwright-report/
 *.pyc
+.playwright-mcp/

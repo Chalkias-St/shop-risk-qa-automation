@@ -4,7 +4,7 @@ from config.settings import API_BASE_URL
 
 
 class UsersAPI:
-
+#Test comment
     def get_user(self, user_id):
 
         return requests.get(
